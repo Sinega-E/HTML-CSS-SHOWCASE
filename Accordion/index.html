@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Accordion with SVG</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="accordion">
+    <div class="accordion-item">
+      <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span>What is an accordion in web development?</span>
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
+        </svg>
+      </button>
+      <div class="accordion-content">
+        <p>An accordion is a user interface (UI) component that allows content to be shown and hidden interactively. It consists of sections, where clicking on a section header expands its associated content while collapsing others. Accordions are commonly used to organize and display large amounts of content in a compact, readable format.</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-header" onclick="toggleAccordion(this)">
+        <span>Where are accordions commonly used in websites or applications?</span>
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
+        </svg>
+      </button>
+      <div class="accordion-content">
+        <p>Accordions are commonly used in the following scenarios:
+
+            FAQs (Frequently Asked Questions): To allow users to expand and view answers to specific questions.
+            Content Navigation: For categorizing and collapsing content, such as in documentation or dashboards.
+            Forms: To separate form fields into sections, showing one part at a time.
+            Product Details: To hide or reveal specifications, reviews, or additional information in e-commerce websites.</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-header" 
+      onclick="toggleAccordion(this)">
+        <span>Why is it important to design an accordion with 
+          smooth transitions?</span>
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" 
+        width="20" height="20" fill="none" viewBox="0 0 24 24" 
+        stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" 
+          d="M12 4.5v15m7.5-7.5h-15"></path>
+        </svg>
+      </button>
+      <div class="accordion-content">
+        <p>Smooth transitions enhance 
+          the user experience by making the opening and 
+          closing of sections feel natural and intuitive. 
+          Abrupt changes can confuse users or make the 
+          interaction feel less polished. Smooth animations
+           also help visually signal the change, 
+           guiding the user’s focus to the expanded content.
+          </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleAccordion(button) {
+  const content = button.nextElementSibling;
+  const isActive = button.classList.contains('active');
+
+  // Collapse all other sections
+  document.querySelectorAll('.accordion-header').
+  forEach((btn) => btn.classList.remove('active'));
+
+  document.querySelectorAll('.accordion-content').
+  forEach((content) => {
+    content.style.maxHeight = null;
+    content.style.paddingTop = '0';
+    content.style.paddingBottom = '0';
+  });
+
+  document.querySelectorAll('.icon').forEach((icon) => {
+    icon.style.transform = 'rotate(0deg)';
+  });
+
+  // Expand the clicked section if not already active
+  if (!isActive) {
+    button.classList.add('active');
+    content.style.maxHeight = content.scrollHeight + 'px';
+    content.style.paddingTop = '20px';
+    content.style.paddingBottom = '20px';
+    button.querySelector('.icon').
+    style.transform = 'rotate(45deg)';
+  }
+}
+
+  </script>
+</body>
+</html>

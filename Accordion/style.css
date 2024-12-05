@@ -1,0 +1,70 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #fef2f2; /* Subtle red-tinted background */
+  color: #4a0404; /* Dark red for text */
+}
+
+.accordion {
+  max-width: 600px;
+  margin: 30px auto;
+  border-radius: 30px; /* Adjust border radius for rounded corners */
+
+}
+
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+.accordion-header {
+  display: flex;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30px 25px;
+  text-align: left;
+  background-color: #fee2e2; /* Light red for inactive tabs */
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  color: #b91c1c; /* Vibrant red for text */
+  border-radius: 80px; /* Rounded corners for the header */
+}
+
+.accordion-header.active {
+  background-color: #f87171; /* More vibrant red for active tab */
+  color: #ffffff; /* White text for contrast */
+  box-shadow: 0 0 12px rgba(255, 71, 71, 0.8); /* Glowing red effect */
+}
+
+.accordion-header:hover {
+  background-color: #fca5a5; /* Slightly brighter red on hover */
+  color: #fff;
+}
+
+.accordion-header .icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.accordion-content {
+  padding: 0 20px; /* Initially no padding to fully hide */
+  background-color: #fef2f2; /* Very light red for content */
+  color: #7f1d1d; /* Darker red for text */
+  overflow: hidden;
+  max-height: 0; /* Fully collapse */
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  font-size: 16px;
+  line-height: 1.8;
+  border-radius: 0 0 15px 15px; /* Rounded corners at the bottom of the content */
+}
+
+.accordion-content p {
+  margin: 0;
+}
